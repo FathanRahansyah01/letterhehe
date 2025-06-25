@@ -1,0 +1,380 @@
+#envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 150px;
+  background-color: #139dcf; /* Warm romantic blue */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.flap {
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 82px solid transparent;
+  /* a little smaller */
+  border-top: 98px solid #139dcf; /* Same romantic blue */
+  /* a little larger */
+  transform-origin: top;
+  pointer-events: none;
+}
+
+.pocket {
+  border-left: 140px solid #139dcf; /* Soft blue for the pocket */
+  border-right: 140px solid #139dcf;
+  border-bottom: 90px solid #139dcf; /* Lighter romantic blue */
+  border-top: 90px solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.letter {
+  position: relative;
+  background-color: #fff;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  top: 5%;
+  border-radius: 6px;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
+  font-family: "Dancing Script", cursive;
+}
+
+.letter:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.words {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 14%;
+  background-color: #ffe6e6; /* Light romantic tone */
+}
+
+.words.line1 {
+  top: 6%;
+  font-size: 0.9rem;
+  width: 80%;
+  height: 10%;
+  left: 10%;
+}
+
+.words.line2 {
+  top: 20%;
+  font-size: 1rem;
+  text-align: center;
+  width: 80%;
+  height: 10%;
+  left: 10%;
+}
+
+.words.line3 {
+  top: 34%;
+  font-size: 1rem;
+  text-align: center;
+  width: 80%;
+  height: 10%;
+  left: 10%;
+}
+
+.words.line4 {
+  top: 48%;
+  font-size: 1rem;
+  text-align: center;
+  width: 80%;
+  height: 10%;
+  left: 10%;
+}
+
+.words.line5 {
+  top: 62%;
+  font-size: 1rem;
+  text-align: center;
+  width: 80%;
+  height: 10%;
+  left: 10%;
+}
+
+.words.line6 {
+  top: 76%;
+  font-size: 1rem;
+  text-align: center;
+  width: 80%;
+  height: 10%;
+  left: 10%;
+}
+
+.open .flap {
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap {
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.close .letter {
+  transform: translateY(0px);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+.open .letter {
+  transform: translateY(-100px);
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  pointer-events: none;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #139dcf; /* Deep romantic blue */
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  pointer-events: none;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.close .heart {
+  opacity: 0;
+  -webkit-animation: none;
+  animation: none;
+}
+
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  -webkit-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  -moz-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.a2 {
+  left: 55%;
+  transform: scale(1);
+  opacity: 1;
+  -webkit-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  -moz-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.a3 {
+  left: 10%;
+  transform: scale(0.8);
+  opacity: 1;
+  -webkit-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  -moz-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -600px;
+  }
+}
+@keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -600px;
+  }
+}
+@-webkit-keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+@keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+body {
+  background-color: #f0e6f6; /* Soft lavender for a romantic, dreamy feel */
+}
+
+body.love-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8e1f4 0%, #cbe7f6 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+#bg-hearts {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+.envelope-wrapper {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+#envelope {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 8px #fff8;
+  border: 1.5px solid #b2d6f6;
+  background: linear-gradient(120deg, #e3f0ff 60%, #f8e1f4 100%);
+}
+.letter {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  border: 1px solid #f3c6e8;
+  background: #fffbe9;
+  transition: transform 0.6s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.4s;
+}
+.open .letter {
+  box-shadow: 0 8px 32px rgba(255, 182, 193, 0.18);
+  transform: translateY(-110px) scale(1.04) rotate(-2deg);
+}
+.close .letter {
+  transform: translateY(0px) scale(1) rotate(0deg);
+}
+.reset button {
+  border-radius: 24px;
+  background: linear-gradient(90deg, #f8e1f4 0%, #cbe7f6 100%);
+  box-shadow: 0 2px 8px #e3f0ff88;
+  border: none;
+  color: #139dcf;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 28px;
+  margin: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.reset button:hover {
+  background: linear-gradient(90deg, #cbe7f6 0%, #f8e1f4 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px #f3c6e888;
+}
+.from {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  color: #ffffff;
+  margin-top: 12px;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  z-index: 2;
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  #envelope {
+    width: 95vw;
+    height: 60vw;
+    min-width: 180px;
+    min-height: 120px;
+    max-width: 98vw;
+    max-height: 70vw;
+    top: 40px;
+  }
+  .letter {
+    font-size: 0.85rem;
+  }
+  .words.line1, .words.line2, .words.line3, .words.line4, .words.line5, .words.line6 {
+    font-size: 0.95rem;
+    height: 11%;
+  }
+  .reset button {
+    min-width: 80px;
+    font-size: 12px;
+    padding: 7px;
+  }
+}
+
+.center-open {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  opacity: 1;
+  transition: opacity 0.3s;
+  pointer-events: auto;
+  min-width: 110px;
+  font-size: 1.1rem;
+}
+.close #open.center-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.open #open.center-open {
+  opacity: 0;
+  pointer-events: none;
+}
+.close #reset.center-open {
+  opacity: 0;
+  pointer-events: none;
+}
+.open #reset.center-open {
+  opacity: 1;
+  pointer-events: auto;
+}
